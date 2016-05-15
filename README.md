@@ -79,8 +79,8 @@ simplification in that there is only a single command that contains all possible
 user interactions (*FConfiguratorCommandRequest*), which are distinguished by an
 enumeration value (*EConfiguratorCommand*).
 
-In the future, there will be syntax to declare RPC functions, and all messages
-(one per function) will be generated automatically.
+In the future, there will be syntax to declare RPC functions, and messages (one
+per function) will be generated automatically.
 
 
 ## Support
