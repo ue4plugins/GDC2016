@@ -1,0 +1,24 @@
+{
+	"FileVersion" : 3,
+	
+	"FriendlyName" : "GDC 2016",
+	"Version" : 1,
+	"VersionName" : "1.0",
+	"CreatedBy" : "Epic Games, Inc.",
+	"CreatedByURL" : "http://epicgames.com",
+	"EngineVersion" : "4.10.0",
+	"Description" : "Provides code components for the GDC2016 demo.",
+	"Category" : "GDC2016",
+	"EnabledByDefault" : true,
+	"IsBetaVersion": true,
+
+	"Modules" :
+	[
+		{
+			"Name" : "GDC2016",
+			"Type" : "Runtime"
+		}
+	],
+
+	"CanContainContent" : false
+}
