@@ -87,7 +87,7 @@ per function) will be generated automatically.
 
 No support is provided for this plug-in, and we're not planning to add any new
 features. If you have questions about the McLaren project, please visit the
-[UE4 Forums](https://forums.unrealengine.com/)!
+[UE4 Forums](https://forums.unrealengine.com/showthread.php?109912-Max-Preussner-s-powerpoint-from-The-Making-of-the-McLaren-Car-Configurator), thanks!
 
 ## References
 
