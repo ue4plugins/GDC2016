@@ -91,5 +91,6 @@ features. If you have questions about the McLaren project, please visit the
 
 ## References
 
+* [Slides from the Twitch Livestream](http://www.slideshare.net/GerkeMaxPreussner/ue4-twitch-2016-0505-unreal-message-bus-overview) (SlideShare)
 * [GDC 2016: A Real-Time Rendered Future - McLaren + Unreal Engine 4](https://www.youtube.com/watch?v=0oZfvoG6qYQ) (YouTube)
-* [UE4 Docs: IMessageBus Interface](https://docs.unrealengine.com/latest/INT/API/Runtime/Messaging/IMessageBus/index.html)
+* [IMessageBus Interface](https://docs.unrealengine.com/latest/INT/API/Runtime/Messaging/IMessageBus/index.html) (UE4 Docs)
