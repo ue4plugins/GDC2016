@@ -36,10 +36,10 @@ while hiding the implementation details of low-level network transports, such as
 sockets, IP addresses, and port numbers in order to provide a better experience
 to the user. As a programmer, however, even messages are still too low-level.
 
-What we are really interested in is something that behaves more like network
-replication in that the programmer simply calls a C++ function, which then just
-so happens to execute on another computer. We are currently implementing such a
-system on top of the message bus: [MessagingRpc](https://github.com/EpicGames/UnrealEngine/tree/master/Engine/Source/Runtime/MessagingRpc).
+What we are really interested in is something that works similar to network
+replication: the programmer simply calls a C++ function, which may then execute
+on another computer. We are currently implementing such a system on top of the
+message bus: [MessagingRpc](https://github.com/EpicGames/UnrealEngine/tree/master/Engine/Source/Runtime/MessagingRpc).
 Although it is complete overkill for something as simple as the McLaren demo, we
 decided to use it anyway as an early test bed. Most communication therefore
 happens not via messages directly, but via RPC calls that send messages under
@@ -51,24 +51,25 @@ the hood.
 The plug-in contains two classes, *AConfiguratorGameMode* and
 *ACompanionGameMode*, that expose a number of Blueprint functions in the
 configurator and companion app respectively. For convenience, we put both into
-a single plug-in, which was then compiled seperately for each project. The game
-designer then selected the appropriate game mode in each project. Because the
-message bus implementation slightly differed between the two, we had to add a
+a single plug-in, which is then compiled seperately for each project. The game
+designer then selects the appropriate game mode in each project. Because the
+message bus implementation slightly differs between the two, we had to add a
 [small hack](https://github.com/ue4plugins/GDC2016/blob/master/Source/GDC2016/Private/ConfiguratorGameMode.cpp#L30)
 to make sure the code compiles in both projects.
 
 For the purpose of the demo, the communication was kept unidirectional, meaning
 that the companion app only sends commands, and the configurator only receives
 and processes them. Return values from RPC calls are ignored. Other than
-discovering the configurator, there is no communication from the configurator
+discovering the configurator there is no communication from the configurator
 back to the companion app. However, if you need bi-directional communication,
 you can easily achieve it by following the same principles.
 
 The connection from the companion app to the configurator happens automatically
-in [ACompanionGameMode::HandleTicker](https://github.com/ue4plugins/GDC2016/blob/master/Source/GDC2016/Private/CompanionGameMode.cpp#L88)
-that continuously pings the message bus for available configurators. To keep
+in [ACompanionGameMode::HandleTicker](https://github.com/ue4plugins/GDC2016/blob/master/Source/GDC2016/Private/CompanionGameMode.cpp#L88),
+which continuously pings the message bus for available configurators. To keep
 things simple, this discovery mechanism does not support multiple configurators
-on the network, but simply connects to any that it finds.
+on the network. It assumes that there is only one instance at a time and
+connects to the first one that it finds.
 
 MessagingRpc is still in an early stage and missing some important features. In
 particular, it does not currently have a code generator in UHT that generates
@@ -76,8 +77,8 @@ the messages from C++ declarations of RPC functions. We therefore had to code
 [all the messages](https://github.com/ue4plugins/GDC2016/blob/master/Source/GDC2016/Private/RpcMessages.h)
 by hand. In order to get the project up and running quickly, we also made a big
 simplification in that there is only a single command that contains all possible
-user interactions (*FConfiguratorCommandRequest*), which are distinguished by an
-enumeration value (*EConfiguratorCommand*).
+user interactions (*FConfiguratorCommandRequest*) distinguished by an enum value
+(*EConfiguratorCommand*).
 
 In the future, there will be syntax to declare RPC functions, and messages (one
 per function) will be generated automatically.
