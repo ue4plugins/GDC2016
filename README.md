@@ -51,7 +51,7 @@ the hood.
 The plug-in contains two classes, *AConfiguratorGameMode* and
 *ACompanionGameMode*, that expose a number of Blueprint functions in the
 configurator and companion app respectively. For convenience, we put both into
-a single plug-in, which is then compiled seperately for each project. The game
+a single plug-in, which is compiled seperately for each project. The game
 designer then selects the appropriate game mode in each project. Because the
 message bus implementation slightly differs between the two, we had to add a
 [small hack](https://github.com/ue4plugins/GDC2016/blob/master/Source/GDC2016/Private/ConfiguratorGameMode.cpp#L30)
