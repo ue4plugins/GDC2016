@@ -1,8 +1,12 @@
 // Copyright 1998-2016 Epic Games, Inc. All Rights Reserved.
 
-#include "GDC2016PrivatePCH.h"
 #include "CompanionGameMode.h"
+
 #include "IMessageRpcClient.h"
+#include "IMessagingRpcModule.h"
+#include "RpcMessages.h"
+#include "Containers/Ticker.h"
+#include "Helpers/MessageEndpointBuilder.h"
 
 
 void ACompanionGameMode::InitGame(const FString& MapName, const FString& Options, FString& ErrorMessage)

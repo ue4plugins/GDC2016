@@ -4,10 +4,15 @@
 
 #include "AsyncResult.h"
 #include "GameFramework/GameMode.h"
+
 #include "ConfiguratorGameMode.generated.h"
 
-
+class FMessageEndpoint;
+class IMessageContext;
 class IMessageRpcServer;
+
+struct FConfiguratorPing;
+struct FConfiguratorCommandRequest;
 
 DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnConfiguratorEvent);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOnConfiguratorUpdateRotation, float, Yaw, float, Pitch);
@@ -23,12 +28,8 @@ class AConfiguratorGameMode
 
 public:
 
-	virtual void InitGame(const FString& MapName, const FString& Options, FString& ErrorMessage) override;
-
-public:
-
 	/** Event delegate that is called when the view should be reset. */
-	UPROPERTY(BlueprintAssignable, Category = "GDC2016|ConfiguratorGameMode")
+	UPROPERTY(BlueprintAssignable, Category="GDC2016|ConfiguratorGameMode")
 	FOnConfiguratorEvent OnReset;
 
 	/** Event delegate that is called when the view has been tapped. */
@@ -36,20 +37,26 @@ public:
 	FOnConfiguratorEvent OnTap;
 
 	/** Event delegate that is called when the car's rotation should be updated. */
-	UPROPERTY(BlueprintAssignable, Category = "GDC2016|ConfiguratorGameMode")
+	UPROPERTY(BlueprintAssignable, Category="GDC2016|ConfiguratorGameMode")
 	FOnConfiguratorUpdateRotation OnUpdateRotation;
 
 	/** Event delegate that is called when the car's selected item should be updated. */
-	UPROPERTY(BlueprintAssignable, Category = "GDC2016|ConfiguratorGameMode")
+	UPROPERTY(BlueprintAssignable, Category="GDC2016|ConfiguratorGameMode")
 	FOnConfiguratorUpdateSelectedItem OnUpdateSelectedItem;
 
 	/** Event delegate that is called when the visualization should be updated. */
-	UPROPERTY(BlueprintAssignable, Category = "GDC2016|ConfiguratorGameMode")
+	UPROPERTY(BlueprintAssignable, Category="GDC2016|ConfiguratorGameMode")
 	FOnConfiguratorUpdateVisualization OnUpdateVisualization;
 
 	/** Event delegate that is called when the view should be zoomed. */
 	UPROPERTY(BlueprintAssignable, Category="GDC2016|ConfiguratorGameMode")
 	FOnConfiguratorEvent OnZoom;
+
+public:
+
+	//~ AGameMode interface
+
+	virtual void InitGame(const FString& MapName, const FString& Options, FString& ErrorMessage) override;
 
 private:
 

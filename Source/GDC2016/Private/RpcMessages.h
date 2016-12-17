@@ -3,6 +3,8 @@
 #pragma once
 
 #include "RpcMessage.h"
+#include "UObject/ObjectMacros.h"
+
 #include "RpcMessages.generated.h"
 
 
@@ -35,7 +37,7 @@ struct FConfiguratorPong
 *****************************************************************************/
 
 UENUM()
-enum class EConfiguratorCommand
+enum class EConfiguratorCommand : uint8
 {
 	Reset,
 	Tap,
@@ -50,10 +52,10 @@ USTRUCT()
 struct FConfiguratorCommandRequest
 	: public FRpcMessage
 {
-	GENERATED_USTRUCT_BODY()
+	GENERATED_BODY()
 
 	UPROPERTY(EditAnywhere, Category="Message")
-	TEnumAsByte<EConfiguratorCommand> Command;
+	EConfiguratorCommand Command;
 
 	UPROPERTY(EditAnywhere, Category="Message")
 	int32 CategoryIndex;
@@ -94,7 +96,7 @@ USTRUCT()
 struct FConfiguratorCommandResponse
 	: public FRpcMessage
 {
-	GENERATED_USTRUCT_BODY()
+	GENERATED_BODY()
 
 	UPROPERTY(EditAnywhere, Category="Message")
 	int32 Result;

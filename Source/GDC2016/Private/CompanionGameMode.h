@@ -3,12 +3,15 @@
 #pragma once
 
 #include "GameFramework/GameMode.h"
-#include "CompanionGameMode.generated.h"
+#include "IMessageContext.h"
+#include "UObject/ScriptMacros.h"
 
+#include "CompanionGameMode.generated.h"
 
 class FMessageEndpoint;
 class IMessageRpcClient;
 
+struct FConfiguratorPong;
 
 DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnConfiguratorFound);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnConfiguratorLost);
@@ -22,7 +25,13 @@ class ACompanionGameMode
 
 public:
 
+	/** Virtual destructor. */
 	virtual ~ACompanionGameMode();
+
+public:
+
+	//~ AGameMode interface
+
 	virtual void InitGame(const FString& MapName, const FString& Options, FString& ErrorMessage) override;
 
 public:

@@ -1,8 +1,12 @@
 // Copyright 1998-2016 Epic Games, Inc. All Rights Reserved.
 
-#include "GDC2016PrivatePCH.h"
 #include "ConfiguratorGameMode.h"
+
 #include "IMessageRpcServer.h"
+#include "IMessagingRpcModule.h"
+#include "RpcMessages.h"
+#include "Helpers/MessageEndpointBuilder.h"
+#include "Modules/ModuleManager.h"
 #include "Runtime/Launch/Resources/Version.h"
 
 

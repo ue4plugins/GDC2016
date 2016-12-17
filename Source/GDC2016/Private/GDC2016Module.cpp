@@ -1,8 +1,8 @@
 // Copyright 1998-2016 Epic Games, Inc. All Rights Reserved.
 
-#include "GDC2016PrivatePCH.h"
-#include "ModuleInterface.h"
-#include "ModuleManager.h"
+
+#include "Modules/ModuleInterface.h"
+#include "Modules/ModuleManager.h"
 
 
 #define LOCTEXT_NAMESPACE "FConfiguratorRemoteModule"
@@ -16,15 +16,10 @@ class FGDC2016Module
 {
 public:
 
-	// IModuleInterface interface
+	//~ IModuleInterface interface
 
-	virtual void StartupModule() override
-	{
-	}
-
-	virtual void ShutdownModule() override
-	{
-	}
+	virtual void StartupModule() override { }
+	virtual void ShutdownModule() override { }
 
 	virtual bool SupportsDynamicReloading() override
 	{
@@ -34,6 +29,5 @@ public:
 
 
 IMPLEMENT_MODULE(FGDC2016Module, GDC2016);
-
 
 #undef LOCTEXT_NAMESPACE
