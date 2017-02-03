@@ -20,6 +20,16 @@ For a brief introduction about the making of this project, please check out our
 [Twitch livestream](https://www.youtube.com/watch?v=tjvKsEcbHk0) on YouTube. An
 overview of the programming details starts at [43:45](https://youtu.be/tjvKsEcbHk0?t=2625).
 
+Make sure to pull the Tag that matches your Unreal Engine version. If you sync
+to Master the code may not compile, because it may depend on Engine changes that
+are not yet available in the UE4 Master branch.
+
+
+## Supported Platforms
+
+This plug-in was last built against **Unreal Engine 4.15** and works on all
+platforms.
+
 
 ## Overview
 
