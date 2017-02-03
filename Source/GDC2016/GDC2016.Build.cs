@@ -4,7 +4,7 @@ namespace UnrealBuildTool.Rules
 {
 	public class GDC2016 : ModuleRules
 	{
-		public GDC2016(TargetInfo Target)
+		public GDC2016(ReadOnlyTargetRules Target) : base(Target)
 		{
 			PrivateDependencyModuleNames.AddRange(
 				new string[] {
