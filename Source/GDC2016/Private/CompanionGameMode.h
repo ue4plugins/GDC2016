@@ -2,8 +2,11 @@
 
 #pragma once
 
+#include "CoreTypes.h"
+#include "Delegates/Delegate.h"
 #include "GameFramework/GameMode.h"
 #include "IMessageContext.h"
+#include "Misc/DateTime.h"
 #include "UObject/ScriptMacros.h"
 
 #include "CompanionGameMode.generated.h"
@@ -12,6 +15,7 @@ class FMessageEndpoint;
 class IMessageRpcClient;
 
 struct FConfiguratorPong;
+
 
 DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnConfiguratorFound);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnConfiguratorLost);

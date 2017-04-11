@@ -2,8 +2,10 @@
 
 #pragma once
 
+#include "CoreTypes.h"
 #include "AsyncResult.h"
 #include "GameFramework/GameMode.h"
+#include "Templates/SharedPointer.h"
 
 #include "ConfiguratorGameMode.generated.h"
 
@@ -13,6 +15,7 @@ class IMessageRpcServer;
 
 struct FConfiguratorPing;
 struct FConfiguratorCommandRequest;
+
 
 DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnConfiguratorEvent);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOnConfiguratorUpdateRotation, float, Yaw, float, Pitch);

@@ -2,6 +2,8 @@
 
 #pragma once
 
+#include "CoreTypes.h"
+#include "Containers/UnrealString.h"
 #include "RpcMessage.h"
 #include "UObject/ObjectMacros.h"
 
