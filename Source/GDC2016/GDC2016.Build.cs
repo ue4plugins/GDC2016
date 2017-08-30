@@ -6,28 +6,26 @@ namespace UnrealBuildTool.Rules
 	{
 		public GDC2016(ReadOnlyTargetRules Target) : base(Target)
 		{
-            PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
+			PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
 
-            PrivateDependencyModuleNames.AddRange(
+			PrivateDependencyModuleNames.AddRange(
 				new string[] {
 					"Core",
 					"CoreUObject",
-                    "Engine",
-                    "MessagingRpc",
-				}
-			);
+					"Engine",
+					"MessagingCommon",
+					"MessagingRpc",
+				});
 
 			PrivateIncludePathModuleNames.AddRange(
 				new string[] {
 					"Messaging",
-				}
-			);
+				});
 
 			PrivateIncludePaths.AddRange(
 				new string[] {
 					"GDC2016/Private",
-				}
-			);
+				});
 		}
 	}
 }
