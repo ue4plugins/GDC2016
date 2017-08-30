@@ -6,7 +6,7 @@
 #include "IMessagingRpcModule.h"
 #include "RpcMessages.h"
 #include "Containers/Ticker.h"
-#include "Helpers/MessageEndpointBuilder.h"
+#include "MessageEndpointBuilder.h"
 
 
 void ACompanionGameMode::InitGame(const FString& MapName, const FString& Options, FString& ErrorMessage)

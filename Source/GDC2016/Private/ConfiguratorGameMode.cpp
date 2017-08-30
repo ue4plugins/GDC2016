@@ -5,7 +5,7 @@
 #include "IMessageRpcServer.h"
 #include "IMessagingRpcModule.h"
 #include "RpcMessages.h"
-#include "Helpers/MessageEndpointBuilder.h"
+#include "MessageEndpointBuilder.h"
 #include "Modules/ModuleManager.h"
 #include "Runtime/Launch/Resources/Version.h"
 
